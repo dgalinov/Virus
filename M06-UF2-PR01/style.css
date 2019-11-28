@@ -1,0 +1,104 @@
+html body {
+    background-image: url("green.png");
+    background-size: cover;
+
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card {
+    -webkit-box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
+    -moz-box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
+    box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
+    transition: 0.3s;
+    width: 10em;
+    margin-right: 2em;
+    background-color: rgb(110, 0, 110);
+    padding-bottom: 3em;
+    border-radius: 1.5em;
+}
+
+.card:hover {
+    -webkit-box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
+    -moz-box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
+    box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
+}
+
+.container {
+    padding: 2px 16px;
+    color: white;
+    font-weight: bolder;
+    font-size: 2em;
+    height: 2em;
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.input-virus {
+    color: white;
+    background-color: rgb(83, 83, 83);
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    width: 20em;
+    height: 2em;
+    padding-left: 1em;
+}
+
+.input-virus:focus {
+    outline: none;
+}
+
+.input-virus::placeholder {
+    color: rgba(255, 255, 255, 0.555);
+}
+
+h1 {
+    -webkit-text-stroke: 3px white;
+    color: rgb(110, 0, 110);
+    font-size: 5em;
+    font-weight: bold;
+    margin-top: -0.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.newVirus {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #fe6224 100%);
+	background-color:#ffec64;
+	border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	padding:6px 24px;
+    text-decoration:none;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+
+.myButton:focus {
+    outline: none;
+}
+.myButton:active {
+	position:relative;
+    top:1px;
+    outline: none;
+}
