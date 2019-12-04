@@ -2,33 +2,20 @@ class Organo{
     constructor(nombre, estadoActual) {
         this.nombre = nombre;
         this.estadoActual = estadoActual;
-        /*this.estadosPosibles = {
-            SANO = 'sano',
-            INFECTADO = 'infectado',
-            GRAVE = 'grave',
-            EXTIRPADO = 'extirpado'
-        } */
-    
-    }
-    
-
-    empeorar() {
-        //TODO
-    }
-
-    mejorar() {
-        //TODO
     }
 
     getters() {
-        //TODO
+        return this.estadoActual;
     }
 
-    setters() {
-        //TODO
+    setters(estadoNuevo) {
+        if (estadoNuevo == 'sano' || estadoNuevo == 'infectado' || estadoNuevo == 'grave' || estadoNuevo == 'extirpado') {
+            this.estadoActual = estadoNuevo;
+        }
     }
     toString() {
-        //TODO MOSTRAR EN EL TEXTAREA
+        let display = this.nombre + ' - ' + this.estadoActual;
+        document.getElementById('displayOrganos').innerHTML += display + '\n';
     }
 }
 
@@ -38,3 +25,9 @@ const organos = [
     new Organo("Estómago", "sano"),
     new Organo("Riñón", "sano")
 ];
+
+function displayOrganos() {
+    for (let i = 0; i < organos.length; i++) {
+        organos[i].toString();
+    }
+}

@@ -4,62 +4,50 @@ class VirusNormal extends Virus{
         this.organosPosibles = ["Cerebro", "Corazón", "Estómago", "Riñón"];
         this.organosInfectados = [];
     }
-
     infectar() {
-        console.log("infectar:");
-            let x = Math.floor(Math.random() * organos.length);
-            console.log(x);
-            organos[x].estadoActual = "infectado";
-            console.log(organos);
+        
     }
-
     atacar() {
-        let contador = 0;
-        for (let i = 0; i < organos.length; i++) {
-            if (organos[i].estadoActual == "infectado") {
-                contador++;
-                console.log("contador " + contador);
-            }
-        }
-        let x = Math.floor(Math.random() * contador);
-        if (organos[x].estadoActual == "infectado") {
-            organos[x].estadoActual = "grave";
-        } else if (organos[x].estadoActual == "grave") {
-            organos[x].estadoActual == "extirpado";
-        } else {
 
-        }
-        console.log("ATACAR:");
-        console.log(organos);
     }
-
     curar() {
-        //TODO
+        
     }
-    
     toString() {
-        //TODO
+        let display = this.nombre + ' - ' + this.medicina;
+        document.getElementById('displayVirus').innerHTML += display + '\n';
     }
 }
-const virus = [
-    
-];
-
-document.getElementById('submit').addEventListener('click',()=>{
-    let radios = document.getElementsByName('med');
-    let radioSelected = '';
-    for (let i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked){
-            radioSelected = document.getElementById('med' + i);
-            //console.log(radioSelected);
+const virusArray = [];
+document.getElementById('crearVirus').addEventListener('click',()=>{
+    if (document.getElementById('virusNormal').checked) {
+        let radios = document.getElementsByName('med');
+        let radioSelected = '';
+        for (let i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked){
+                radioSelected = document.getElementById('med' + i);
+            }
         }
-    }
-    if (virus.length < 3) {
-        Math.floor
-        virus.push(new VirusNormal(document.getElementById('name').value, radioSelected.id, ));
+        if (virusArray.length < 3) {
+            virusArray.push(new VirusNormal(document.getElementById('name').value, radioSelected.id, ));
+        } else {
+            document.getElementById('displayVirus').innerHTML = 'Només es poden crear 3 virus';
+        }
+    } else if (document.getElementById('virusVacuna').checked) {
+        let radios = document.getElementsByName('med');
+        let radioSelected = '';
+        for (let i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked){
+                radioSelected = document.getElementById('med' + i);
+            }
+        }
+        if (virusArray.length < 3) {
+            const virus = new VirusNormal(document.getElementById('name').value, radioSelectedm, );
+            virusArray.push(new VirusVacuna(document.getElementById('name').value, radioSelected.id, virus.organosPosibles, virus.organosInfectados));
+        } else {
+            document.getElementById('displayVirus').innerHTML = 'Només es poden crear 3 virus';
+        }
     } else {
-        alert("Nomes es poden crear 3 virus");
+        document.getElementById('displayVirus').innerHTML = 'Por favor escoge un tipo de virus';
     }
-    console.log(virus);
-    //virus[0].infectar();
-}); 
+});

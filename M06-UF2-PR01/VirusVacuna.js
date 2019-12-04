@@ -1,14 +1,15 @@
 class VirusVacuna extends Virus{
     constructor(nombre, medicina, virusLatente) {
         super(nombre, medicina);
-        this.virusLatente = virusLatente;
+        this.virusLatente = new VirusNormal();
     }
 
     evolucionar(virusLatente) {
-        //TODO
+        
     }
 
     toString() {
-        //TODO
+        let display = this.nombre + ' - ' + this.medicina;
+        document.getElementById('displayVirus').innerHTML += display + '\n';
     }
 }

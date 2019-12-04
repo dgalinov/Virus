@@ -1,104 +1,222 @@
-html body {
-    background-image: url("green.png");
-    background-size: cover;
-
-}
-
 * {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.card {
-    -webkit-box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
-    -moz-box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
-    box-shadow: 0px 0px 24px 3px rgba(117,117,117,1);
-    transition: 0.3s;
-    width: 10em;
-    margin-right: 2em;
-    background-color: rgb(110, 0, 110);
-    padding-bottom: 3em;
-    border-radius: 1.5em;
-}
-
-.card:hover {
-    -webkit-box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
-    -moz-box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
-    box-shadow: 0px 0px 24px 3px rgba(110, 0, 110, 0.678);
-}
-
-.container {
-    padding: 2px 16px;
+.input-virus-name {
     color: white;
-    font-weight: bolder;
-    font-size: 2em;
-    height: 2em;
-    margin-top: -1em;
-    margin-bottom: 1em;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
-}
-
-.input-virus {
-    color: white;
-    background-color: rgb(83, 83, 83);
+    background-color: #ffa300;
     border: none;
-    border-top-left-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
-    width: 20em;
+    border-radius:8px;
+    width: 15em;
     height: 2em;
     padding-left: 1em;
+    padding: 12px;
 }
-
-.input-virus:focus {
+.input-virus-name:focus {
     outline: none;
 }
-
-.input-virus::placeholder {
+.input-virus-name::placeholder {
     color: rgba(255, 255, 255, 0.555);
 }
-
 h1 {
-    -webkit-text-stroke: 3px white;
-    color: rgb(110, 0, 110);
+    color: #ffa300;
     font-size: 5em;
     font-weight: bold;
     margin-top: -0.1em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h3 {
+    color: #ffa300;
 }
 
-.newVirus {
+.container {
     display: flex;
     justify-content: center;
+    margin-top: 2em;
+}
+.container-div {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    border: 0.1em solid #ffa300;
+    border-radius:8px;
+    padding: 3em;
 }
-.myButton {
-	box-shadow:inset 0px 1px 0px 0px #fff6af;
-	background:linear-gradient(to bottom, #ffec64 5%, #fe6224 100%);
-	background-color:#ffec64;
-	border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-	border:1px solid #ffaa22;
-	display:inline-block;
-	cursor:pointer;
-	color:white;
-	padding:6px 24px;
-    text-decoration:none;
+.margin-right {
+    margin-right: 3em;
 }
-.myButton:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
+.control {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 29px;
+    margin-bottom: 11px;
+    padding-top: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control_indicator {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #ffa300;
+    border: 0px solid #000000;
+    border-radius: undefinedpx;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: #ffcb6e;
 }
 
-.myButton:focus {
+.control input:checked ~ .control_indicator {
+    background: #ffa300;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #ffa300;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 35;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-radio .control_indicator {
+    border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    transition: background 250ms;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+    background: #7b7b7b;
+}.control-radio .control_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.01;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control-radio input + .control_indicator::before {
+    animation: s-ripple 250ms ease-out;
+}
+.control-radio input:checked + .control_indicator::before {
+    animation-name: s-ripple-dup;
+}
+.btn {
+	box-shadow: 0px 10px 14px -7px #e69100;
+	background:linear-gradient(to bottom, #fcc15c 5%, #ffa300 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+    border: none;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #ffa300 5%, #fcc15c 100%);
+	background-color:#ffa300;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+.btn:focus {
     outline: none;
 }
-.myButton:active {
+.btn-small {
+	box-shadow: 0px 10px 14px -7px #e69100;
+	background:linear-gradient(to bottom, #fcc15c 5%, #ffa300 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+    border: none;
+}
+.btn-small:hover {
+	background:linear-gradient(to bottom, #ffa300 5%, #fcc15c 100%);
+	background-color:#ffa300;
+}
+.btn-small:active {
 	position:relative;
-    top:1px;
+	top:1px;
+}
+.btn-small:focus {
     outline: none;
+}
+textarea {
+    color: white;
+    background: #ffa300;
+    border: none;
+    border-radius:8px;
+    margin-top: 15px;
+    padding: 20px;
+    resize: none;
 }
