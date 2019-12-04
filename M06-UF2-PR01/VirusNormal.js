@@ -5,10 +5,36 @@ class VirusNormal extends Virus{
         this.organosInfectados = [];
     }
     infectar() {
-        
+        var x = Math.floor((Math.random() * 4));
+        if (!this.organosInfectados.includes(this.organosPosibles[x])) {
+            this.organosInfectados.push(this.organosPosibles[x]);
+            for (let i = 0; i < virusArray.length; i++) {
+                for (let j = 0; j < virusArray[i].organosInfectados.length; j++) {
+                    if (!virusArray[i].organosInfectados.includes(this.organosPosibles[j])) {
+                        virusArray[i].organosInfectados.push(this.organosPosibles[j]);
+                    }
+                }
+            }
+        }
+        if (organos[x].estadoActual == 'sano') {
+            organos[x].estadoActual = 'infectado';
+        } else if (organos[x].estadoActual == 'infectado' ) {
+            organos[x].estadoActual = 'grave';
+        } else {
+            organos[x].estadoActual = 'extirpado';
+        }
     }
     atacar() {
-
+        var x = Math.floor((Math.random() * this.organosInfectados.length));
+        for (let i = 0; i < organos.length; i++) {
+            if (organos[i].nombre == this.organosInfectados[x]) {
+                if (organos[i].estadoActual == 'infectado') {
+                    organos[i].estadoActual = 'grave';
+                } else if (organos[i].estadoActual == 'grave') {
+                    organos[i].estadoActual = 'extirpado'
+                }
+            }
+        }
     }
     curar() {
         
