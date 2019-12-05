@@ -15,87 +15,113 @@
 <body>
     <div class="container">
         <div class="container-div margin-right">
-            <h1>Player One</h1>
-            <h3>Introduce el nombre del virus</h3>
-            <input type="text" name="virusName" id="virusName" placeholder="Nombre de virus" class="input-virus-name">
-            <h3>Escoge el tipo del virus</h3>
-            <div class="control-group" id="virusTypes">
-                <label class="control control-radio">
-                    Virus Normal
-                    <input type="radio" name="virusType" id="virusNormal">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Virus Vacuna
-                    <input type="radio" name="virusType" id="virusVacuna">
-                    <div class="control_indicator"></div>
-                </label>
+            <h1>Jugador Uno</h1>
+            <div class="div-vertical">
+                <input type="text" name="virusName" id="virusName" placeholder="Nombre de virus" class="input-virus-name">
+                <div class="control-group" id="virusTypes" style="margin-right: 0;margin-bottom: 0;">
+                    <label class="control control-radio">
+                        Virus Normal
+                        <input type="radio" name="virusType" id="virusNormal">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Virus Vacuna
+                        <input type="radio" name="virusType" id="virusVacuna">
+                        <div class="control_indicator"></div>
+                    </label>
+                </div>
             </div>
-            <h3>Escoge medicina</h3>
-            <div class="control-group">
-                <label class="control control-radio">
-                    Simvastatina
-                    <input type="radio" name="med" id="med0">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Aspirina
-                    <input type="radio" name="med" id="med1">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Omeprazol
-                    <input type="radio" name="med" id="med2">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Lexotiroxina
-                    <input type="radio" name="med" id="med3">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Ramipril
-                    <input type="radio" name="med" id="med4">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Paracetamol
-                    <input type="radio" name="med" id="med5">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Amlodipina
-                    <input type="radio" name="med" id="med6">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Atorvastatina
-                    <input type="radio" name="med" id="med7">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Ibuprofeno
-                    <input type="radio" name="med" id="med8">
-                    <div class="control_indicator"></div>
-                </label>
-                <label class="control control-radio">
-                    Espidifen
-                    <input type="radio" name="med" id="med9">
-                    <div class="control_indicator"></div>
-                </label>
+            
+            <div class="div-vertical" style="align-items: baseline;">
+                <div class="control-group">
+                    <h3>Órganos</h3>
+                    <label class="control control-radio">
+                        Cerebro
+                        <input type="radio" name="organos" id="cerebro">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Corazón
+                        <input type="radio" name="organos" id="corazon">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Estómago
+                        <input type="radio" name="organos" id="estomago">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Riñón
+                        <input type="radio" name="organos" id="riñon">
+                        <div class="control_indicator"></div>
+                    </label>
+                </div>
+                <div class="control-group"  style="margin-right: 0;">
+                    <h3>Medicina</h3>
+                    <label class="control control-radio">
+                        Simvastatina
+                        <input type="radio" name="med" id="med0">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Aspirina
+                        <input type="radio" name="med" id="med1">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Omeprazol
+                        <input type="radio" name="med" id="med2">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Lexotiroxina
+                        <input type="radio" name="med" id="med3">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Ramipril
+                        <input type="radio" name="med" id="med4">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Paracetamol
+                        <input type="radio" name="med" id="med5">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Amlodipina
+                        <input type="radio" name="med" id="med6">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Atorvastatina
+                        <input type="radio" name="med" id="med7">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Ibuprofeno
+                        <input type="radio" name="med" id="med8">
+                        <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                        Espidifen
+                        <input type="radio" name="med" id="med9">
+                        <div class="control_indicator"></div>
+                    </label>
+                </div>
             </div>
             <input type="button" name="crearVirus" id="crearVirus" value="Crear Virus" class="btn">
         </div>
         <div class="container-div">
-            <h1>Player Two</h1>
-            <input type="button" name="start" id="start" value="START GAME" class="btn">
-            <h3>Introduce medicinas</h3>
+            <h1>Jugador Dos</h1>
+            <input type="button" name="start" id="start" value="Nueva Partida" class="btn">
+            <h3>Introduce medicina</h3>
             <div class="div-vertical">
                 <input type="text" name="curas" id="curas" placeholder="Nombre de medicinas" class="input-virus-name">
-                <input type="button" name="crearVirus" id="crearVirus" value="probar" class="btn-small">
+                <input type="button" name="crearVirus" id="crearVirus" value="Curar" class="btn-small">
             </div>
             <h3>Resultados</h3>
-            <textarea name="displayVirus" id="displayVirus" cols="50" rows="10" disabled>asdfasdf</textarea>
+            <textarea name="displayVirus" id="displayVirus" cols="50" rows="10" disabled></textarea>
             <h3>Medicinas</h3>
             <textarea name="displayOrganos" id="displayOrganos" cols="50" rows="10" disabled></textarea>
         </div>

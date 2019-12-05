@@ -1,6 +1,12 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+html {
+    background: #ffa300;
+}
+div {
+    background: white;
+}
 .input-virus-name {
     color: white;
     background-color: #ffa300;
@@ -10,6 +16,8 @@
     height: 2em;
     padding-left: 1em;
     padding: 12px;
+    margin-right: 2em;
+    font-size: medium;
 }
 .input-virus-name:focus {
     outline: none;
@@ -22,6 +30,7 @@ h1 {
     font-size: 5em;
     font-weight: bold;
     margin-top: -0.1em;
+    margin-bottom: 0.2em;
 }
 h3 {
     color: #ffa300;
@@ -31,6 +40,7 @@ h3 {
     display: flex;
     justify-content: center;
     margin-top: 2em;
+    background: #ffa300;
 }
 .container-div {
     display: flex;
@@ -97,7 +107,10 @@ h3 {
 .control-radio .control_indicator {
     border-radius: 50%;
 }
-
+.control-group {
+    margin-right: 5em;
+    margin-bottom: 2em;
+}
 .control-radio .control_indicator:after {
     left: 7px;
     top: 7px;
@@ -219,4 +232,10 @@ textarea {
     margin-top: 15px;
     padding: 20px;
     resize: none;
+    font-size: medium;
+}
+.div-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

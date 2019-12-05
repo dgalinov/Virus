@@ -55,7 +55,7 @@ document.getElementById('crearVirus').addEventListener('click',()=>{
             }
         }
         if (virusArray.length < 3) {
-            virusArray.push(new VirusNormal(document.getElementById('name').value, radioSelected.id, ));
+            virusArray.push(new VirusNormal(document.getElementById('virusName').value, radioSelected.id, ));
         } else {
             document.getElementById('displayVirus').innerHTML = 'Només es poden crear 3 virus';
         }
@@ -68,8 +68,8 @@ document.getElementById('crearVirus').addEventListener('click',()=>{
             }
         }
         if (virusArray.length < 3) {
-            const virus = new VirusNormal(document.getElementById('name').value, radioSelectedm, );
-            virusArray.push(new VirusVacuna(document.getElementById('name').value, radioSelected.id, virus.organosPosibles, virus.organosInfectados));
+            const virus = new VirusNormal(document.getElementById('virusName').value, radioSelectedm, );
+            virusArray.push(new VirusVacuna(document.getElementById('virusName').value, radioSelected.id, virus.organosPosibles, virus.organosInfectados));
         } else {
             document.getElementById('displayVirus').innerHTML = 'Només es poden crear 3 virus';
         }
